@@ -19,9 +19,9 @@
     },
     "categories": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::category.category",
-      "mappedBy": "articoli"
+      "inversedBy": "articolis"
     },
     "pubblicato_il": {
       "type": "datetime"

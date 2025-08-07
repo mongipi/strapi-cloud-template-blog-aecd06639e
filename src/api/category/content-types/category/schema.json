@@ -15,11 +15,11 @@
     "name": {
       "type": "string"
     },
-    "articoli": {
+    "articolis": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::articoli.articoli",
-      "inversedBy": "categories"
+      "mappedBy": "categories"
     }
   }
 }
