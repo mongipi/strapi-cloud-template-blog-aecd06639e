@@ -388,6 +388,7 @@ export interface ApiArticoliArticoli extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::category.category'
     >;
+    contenuto: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -403,7 +404,7 @@ export interface ApiArticoliArticoli extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     pubblicato_il: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
-    testo: Schema.Attribute.Blocks;
+    testo: Schema.Attribute.Text;
     titolo: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

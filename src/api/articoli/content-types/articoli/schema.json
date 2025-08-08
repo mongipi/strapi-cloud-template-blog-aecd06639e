@@ -33,8 +33,11 @@
         "audios"
       ]
     },
-    "testo": {
+    "contenuto": {
       "type": "blocks"
+    },
+    "testo": {
+      "type": "text"
     }
   }
 }
