@@ -14,9 +14,6 @@
     "titolo": {
       "type": "string"
     },
-    "testo": {
-      "type": "text"
-    },
     "categories": {
       "type": "relation",
       "relation": "manyToMany",
@@ -35,6 +32,9 @@
         "videos",
         "audios"
       ]
+    },
+    "testo": {
+      "type": "blocks"
     }
   }
 }

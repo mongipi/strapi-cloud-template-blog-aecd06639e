@@ -403,7 +403,7 @@ export interface ApiArticoliArticoli extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     pubblicato_il: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
-    testo: Schema.Attribute.Text;
+    testo: Schema.Attribute.Blocks;
     titolo: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
