@@ -445,6 +445,61 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFarmaciaFarmacia extends Struct.CollectionTypeSchema {
+  collectionName: 'farmacias';
+  info: {
+    displayName: 'farmacia';
+    pluralName: 'farmacias';
+    singularName: 'farmacia';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    indirizzo: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::farmacia.farmacia'
+    > &
+      Schema.Attribute.Private;
+    nome: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOrariOrari extends Struct.CollectionTypeSchema {
+  collectionName: 'oraris';
+  info: {
+    displayName: 'orari';
+    pluralName: 'oraris';
+    singularName: 'orari';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    farmacia: Schema.Attribute.Relation<'oneToOne', 'api::farmacia.farmacia'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::orari.orari'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    turno: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -956,6 +1011,8 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::articoli.articoli': ApiArticoliArticoli;
       'api::category.category': ApiCategoryCategory;
+      'api::farmacia.farmacia': ApiFarmaciaFarmacia;
+      'api::orari.orari': ApiOrariOrari;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

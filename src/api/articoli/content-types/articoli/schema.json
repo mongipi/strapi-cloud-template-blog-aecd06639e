@@ -34,7 +34,8 @@
       ]
     },
     "contenuto": {
-      "type": "blocks"
+      "type": "blocks",
+      "required": false
     },
     "testo": {
       "type": "text"
