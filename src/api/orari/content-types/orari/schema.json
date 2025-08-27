@@ -12,7 +12,7 @@
   "pluginOptions": {},
   "attributes": {
     "turno": {
-      "type": "datetime"
+      "type": "date"
     },
     "farmacia": {
       "type": "relation",
